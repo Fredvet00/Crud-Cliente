@@ -13,8 +13,6 @@ public class ClienteServiceImplementation implements ClienteService {
 	
 	@Autowired
 	private ClienteDAO clienteDAO;
-	
-	
 	@Transactional
 	public List<Cliente> get() {
 		return clienteDAO.get();
@@ -22,8 +20,7 @@ public class ClienteServiceImplementation implements ClienteService {
 
 	@Transactional
 	public Cliente get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return clienteDAO.get(id);
 	}
 	@Transactional
 	public void save(Cliente cliente) {
@@ -32,8 +29,12 @@ public class ClienteServiceImplementation implements ClienteService {
 	}
 	@Transactional
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		clienteDAO.delete(id);
 		
 	}
+
+	
+		
+	
 
 }

@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Columns;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,22 +18,22 @@ public class Cliente {
 	  
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	@Column(name="usuario_id")
+	@Column
 	private Long id;
 	
-	@Column(name="usuario_nome")
+	@Column
 	private String nome;
 	
-	@Column(name="usuario_cpf")
+	@Column
 	private String cpf;
 
-	@Column(name="usuario_endereco") //alterar para classe ENDERECO e  usar no DB . list?
+	@Column
 	private String endereco;
 	
-	@Column(name="usuario_telefone")
+	@Column
 	private Integer telefone;
 	
-	@Column(name="usuario_email")
+	@Column
 	private String email;
 	
 	

@@ -2,7 +2,6 @@ package clientesCrud.persistencia.dao;
 
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 
 import org.hibernate.Session;
@@ -27,8 +26,9 @@ public class ClienteDAOImplementation implements ClienteDAO {
 
 	@Override
 	public Cliente get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session currentSession = entityManager.unwrap(Session.class);
+		Cliente clienteObj = currentSession.get(Cliente.class, id);
+		return clienteObj;
 	}
 	
 
@@ -41,8 +41,9 @@ public class ClienteDAOImplementation implements ClienteDAO {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-
+		Session currentSession = entityManager.unwrap(Session.class);
+		Cliente clienteOBJ =currentSession.get(Cliente.class, id);
+		currentSession.delete(clienteOBJ);
 	}
 
 	
